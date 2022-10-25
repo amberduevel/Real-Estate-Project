@@ -1,10 +1,72 @@
 ---
-title: "Project 2"
-author: "Amber Duevel"
-date: "10/25/2022"
+title: "Real Estate Draft"
 output: html_document
 ---
 
+### Setup
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(tidyverse)
+library(ggplot2)
+```
+
+### Cleaning the Data
+
+```{r}
+onalaskaRE = read_csv("Onalaska.csv")
+names(onalaskaRE)
+```
+
+Variables that we want to get rid of: 
+- grantorname
+- grantorrelationship
+- grantortype
+- grantorownintothrnote
+- grantorretainsright
+- grantorrightsothrnote
+- blank...9
+- granteename
+- granteetype
+- granteeaddress
+- blank...14
+- pageimage
+- volumejacket
+- blank...19
+- county
+- physicalpropaddress
+- sectw..
+- blank...27
+- asof
+- comments
+- officialparcelnumbers
+- blank...31
+- blank...38
+- sendtaxbillto
+- name
+- streetaddress
+- citystatezip
+- blank...43
+- transfertype
+- transfertypeothrnote
+- conveydoctype
+- conveyothrnote
+- conveyancedate
+- blank...50
+- mflpfcacres
+- blank...58
+- grantorsagent
+- granteesagent
+- preparername
+- blank...62
+- blank...65
+- prevdocnumber
+- blank...69
+
+```{r}
+onalaskaRE = onalaskaRE %>% select(-c("grantorname", "grantorrelationship", "grantortype", "grantorownintothrnote", "grantorretainsright", "grantorrightsothrnote", "blank...9", "granteename", "granteetype", "granteeaddress", "blank...14", "pageimage", "volumejacket", "blank...19", "county", "physicalpropaddress", "sectwshpbaselinerngemeridian", "blank...27", "asof", "comments", "officialparcelnumbers", "blank...31", "blank...38", "sendtaxbillto", "name", "streetaddress", "citystatezip", "blank...43", "transfertype", "transfertypeothrnote", "conveydoctype", "conveyothrnote", "conveyancedate", "blank...50", "mflpfcacres", "blank...58", "grantorsagent", "granteesagent", "preparername", "blank...62", "blank...65", "prevdocnumber", "blank...69"))
+names(onalaskaRE)
 ```
