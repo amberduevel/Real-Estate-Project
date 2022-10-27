@@ -70,3 +70,9 @@ Variables that we want to get rid of:
 onalaskaRE = onalaskaRE %>% select(-c("grantorname", "grantorrelationship", "grantortype", "grantorownintothrnote", "grantorretainsright", "grantorrightsothrnote", "blank...9", "granteename", "granteetype", "granteeaddress", "blank...14", "pageimage", "volumejacket", "blank...19", "county", "physicalpropaddress", "sectwshpbaselinerngemeridian", "blank...27", "asof", "comments", "officialparcelnumbers", "blank...31", "blank...38", "sendtaxbillto", "name", "streetaddress", "citystatezip", "blank...43", "transfertype", "transfertypeothrnote", "conveydoctype", "conveyothrnote", "conveyancedate", "blank...50", "mflpfcacres", "blank...58", "grantorsagent", "granteesagent", "preparername", "blank...62", "blank...65", "prevdocnumber", "blank...69", "subdivcondolotunitblock"))
 names(onalaskaRE)
 ```
+```{r rename}
+onalaskaRE <- rename(onalaskaRE,c(""="",
+                                  ""="",
+                                  ""="",
+                                  ""="",))
+```
