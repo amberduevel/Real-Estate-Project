@@ -87,7 +87,7 @@ onalaskaRE <- rename(onalaskaRE,c("Grantor_Address"="grantoraddress",
                                   "Personal_property_value_excluded_From_total_value"="ppvalueexcluded",          
                                   "Property_value_exempt_from_local_property_tax"="propvalueexemptloctax",    
                                   "Grantee_Financing"="granteefinancing",        
-                                  "Property_Type"="propertytype...51",        
+                                  "Property_Type1"="propertytype...51",        
                                   "Predominant_use"="predominantuse",           
                                   "Lot_square_footage"="lotsquarefootage",         
                                   "Total_acres"="totalacres",               
@@ -100,5 +100,5 @@ onalaskaRE <- rename(onalaskaRE,c("Grantor_Address"="grantoraddress",
                                   "Arms_length"="armslength",               
                                   "Primary_Class"="primaryclass",            
                                   "Water_type"="watertype",                
-                                  "Property_Type"="propertytype...73"))
+                                  "Property_Type2"="propertytype...73"))
 ```
