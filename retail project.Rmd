@@ -102,3 +102,7 @@ onalaskaRE <- rename(onalaskaRE,c("Grantor_Address"="grantoraddress",
                                   "Water_type"="watertype",                
                                   "Property_Type2"="propertytype...73"))
 ```
+
+```{r}
+onalaskaRE = onalaskaRE %>% select(-c("Ownership_interest_transferred", "Grantee_Certification_Date", "County_doc_num", "Property_legal_descipt", "Primary_residence", "town", "Value_Subject_to_fee", "Transfer_fee_due", "Transfer_fee_exemption_num", "Personal_property_value_excluded_From_total_value", "Property_value_exempt_from_local_property_tax", "Grantee_Financing", "Predominant_use", "Lot_square_footage", "Weatherization_Standards", "Recording_info_add_on", "Doc_locator_num"))
+```
