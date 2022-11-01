@@ -12,6 +12,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r}
 library(tidyverse)
 library(ggplot2)
+library(lubridate)
 ```
 
 ### Cleaning the Data
@@ -114,6 +115,15 @@ onalaskaRE %>% distinct(Date_recorded, Total_Value_Real_estate_Transferred, Prop
 
 ```{r filter total value of real estate}
 onalaskaRE <- onalaskaRE %>% filter(Total_Value_Real_estate_Transferred>1)
+onalaskaRE$Date_recorded = gsub('/', '-', onalaskaRE$Date_recorded)
+onalaskaRE$Date_recorded = gsub('0:00', '', onalaskaRE$Date_recorded)
+onalaskaRE$Date_recorded = as_date(onalaskaRE$Date_recorded, format = "%m-%d-%Y")
+
+Month = month(onalaskaRE$Date_recorded)
+Year = year(onalaskaRE$Date_recorded)
+
+onalaskaRE = cbind(onalaskaRE, Month, Year)
+
 ```
 
 ```{r Feet From water}
