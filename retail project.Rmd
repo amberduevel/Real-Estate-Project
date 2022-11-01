@@ -141,6 +141,21 @@ ggplot(aes(x=Property_Type2,y=Total_Value_Real_estate_Transferred, color=Month),
 
 ```
 
+```{r Plot by Year}
+ggplot(aes(x=Total_acres,y=Total_Value_Real_estate_Transferred, color=Year),data=onalaskaRE)+geom_point()
+
+ggplot(aes(x=Feet_water_frontage,y=Total_Value_Real_estate_Transferred, color=Year),data=onalaskaRE)+geom_point()
+
+ggplot(aes(x=Number_of_units,y=Total_Value_Real_estate_Transferred, color=Year),data=onalaskaRE)+geom_point()
+
+ggplot(aes(x=Arms_length,y=Total_Value_Real_estate_Transferred, color=Year),data=onalaskaRE)+geom_point()
+
+ggplot(aes(x=Water_type,y=Total_Value_Real_estate_Transferred, color=Year),data=onalaskaRE)+geom_point()
+
+ggplot(aes(x=Property_Type2,y=Total_Value_Real_estate_Transferred, color=Year),data=onalaskaRE)+geom_point()
+
+```
+
 ```{r Feet From water}
 Water_lm <- lm(Total_Value_Real_estate_Transferred~Feet_water_frontage, data=onalaskaRE)
 summary(Water_lm)
