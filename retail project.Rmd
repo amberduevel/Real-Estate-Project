@@ -106,7 +106,10 @@ onalaskaRE <- rename(onalaskaRE,c("Grantor_Address"="grantoraddress",
 ```{r}
 onalaskaRE = onalaskaRE %>% select(-c("Ownership_interest_transferred", "Grantee_Certification_Date", "County_doc_num", "Property_legal_descipt", "Primary_residence", "town", "Value_Subject_to_fee", "Transfer_fee_due", "Transfer_fee_exemption_num", "Personal_property_value_excluded_From_total_value", "Property_value_exempt_from_local_property_tax", "Grantee_Financing", "Predominant_use", "Lot_square_footage", "Weatherization_Standards", "Recording_info_add_on", "Doc_locator_num"))
 
+#Trying to get to 4625 rows
 onalaskaRE = unique(onalaskaRE)
+#onalaskaRE[duplicated(onalaskaRE[,-1]) | duplicated(onalaskaRE[,-1], fromLast = TRUE),]
+onalaskaRE %>% distinct(Date_recorded, Total_Value_Real_estate_Transferred, Property_Type1, Total_acres, Feet_water_frontage, Number_of_units, `Energy Exclusion`, Arms_length, Primary_Class, Water_type, Property_Type2, .keep_all = TRUE)
 ```
 
 ```{r filter total value of real estate}
