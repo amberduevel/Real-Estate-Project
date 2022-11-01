@@ -126,6 +126,11 @@ onalaskaRE = cbind(onalaskaRE, Month, Year)
 
 ```
 
+```{r extra cleaning of the data}
+onalaskaRE = onalaskaRE[-(onalaskaRE$Total_acres == 13503.0), ]
+onalaskaRE = subset(onalaskaRE, onalaskaRE$Total_acres < 3000)
+```
+
 ```{r Plot by Month}
 ggplot(aes(x=Total_acres,y=Total_Value_Real_estate_Transferred, color=Month),data=onalaskaRE)+geom_point()
 
@@ -138,21 +143,6 @@ ggplot(aes(x=Arms_length,y=Total_Value_Real_estate_Transferred, color=Month),dat
 ggplot(aes(x=Water_type,y=Total_Value_Real_estate_Transferred, color=Month),data=onalaskaRE)+geom_point()
 
 ggplot(aes(x=Property_Type2,y=Total_Value_Real_estate_Transferred, color=Month),data=onalaskaRE)+geom_point()
-
-```
-
-```{r Plot by Year}
-ggplot(aes(x=Total_acres,y=Total_Value_Real_estate_Transferred, color=Year),data=onalaskaRE)+geom_point()
-
-ggplot(aes(x=Feet_water_frontage,y=Total_Value_Real_estate_Transferred, color=Year),data=onalaskaRE)+geom_point()
-
-ggplot(aes(x=Number_of_units,y=Total_Value_Real_estate_Transferred, color=Year),data=onalaskaRE)+geom_point()
-
-ggplot(aes(x=Arms_length,y=Total_Value_Real_estate_Transferred, color=Year),data=onalaskaRE)+geom_point()
-
-ggplot(aes(x=Water_type,y=Total_Value_Real_estate_Transferred, color=Year),data=onalaskaRE)+geom_point()
-
-ggplot(aes(x=Property_Type2,y=Total_Value_Real_estate_Transferred, color=Year),data=onalaskaRE)+geom_point()
 
 ```
 
