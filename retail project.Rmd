@@ -109,32 +109,66 @@ onalaskaRE = onalaskaRE %>% select(-c("Ownership_interest_transferred", "Grantee
 onalaskaRE = unique(onalaskaRE)
 ```
 
+```{r filter total value of real estate}
+onalaskaRE <- onalaskaRE %>% filter(Total_Value_Real_estate_Transferred>1)
+```
+
 ```{r Feet From water}
 Water_lm <- lm(Total_Value_Real_estate_Transferred~Feet_water_frontage, data=onalaskaRE)
 summary(Water_lm)
+
+water_plot = ggplot(aes(x = Feet_water_frontage, y = Total_Value_Real_estate_Transferred), data = onalaskaRE) +
+  geom_point() +
+  geom_smooth(method = "lm")
+water_plot
 ```
 
 ```{r Total Acres}
 Acres_lm <- lm(Total_Value_Real_estate_Transferred~Total_acres, data=onalaskaRE)
 summary(Acres_lm)
+
+Acres_plot = ggplot(aes(x = Total_acres, y = Total_Value_Real_estate_Transferred), data = onalaskaRE) +
+  geom_point() +
+  geom_smooth(method = "lm")
+Acres_plot
 ```
 
 ```{r Number of Units}
 Units_lm <- lm(Total_Value_Real_estate_Transferred~Number_of_units, data=onalaskaRE)
 summary(Units_lm)
+
+Units_plot = ggplot(aes(x = Number_of_units, y = Total_Value_Real_estate_Transferred), data = onalaskaRE) +
+  geom_point() +
+  geom_smooth(method = "lm")
+Units_plot
 ```
 
 ```{r Arms Length}
 Arms_lm <- lm(Total_Value_Real_estate_Transferred~Arms_length, data=onalaskaRE)
 summary(Arms_lm)
+
+Arms_plot = ggplot(aes(x = Arms_length, y = Total_Value_Real_estate_Transferred), data = onalaskaRE) +
+  geom_point() +
+  geom_smooth(method = "lm")
+Arms_plot
 ```
 
 ```{r Water Type}
 Water_Type_lm <- lm(Total_Value_Real_estate_Transferred~Water_type, data=onalaskaRE)
 summary(Water_Type_lm)
+
+water_type_plot = ggplot(aes(x = Water_type, y = Total_Value_Real_estate_Transferred), data = onalaskaRE) +
+  geom_point() +
+  geom_smooth(method = "lm")
+water_type_plot
 ```
 
 ```{r property type}
 Property_lm <- lm(Total_Value_Real_estate_Transferred~Property_Type2, data=onalaskaRE)
 summary(Property_lm)
+
+Property_plot = ggplot(aes(x = Property_Type2, y = Total_Value_Real_estate_Transferred), data = onalaskaRE) +
+  geom_point() +
+  geom_smooth(method = "lm")
+Property_plot
 ```
