@@ -136,6 +136,11 @@ scat_matrix = ggpairs(onalaskaRE %>% select(Property_Type1, Total_acres, Feet_wa
 scat_matrix
 ```
 
+```{r}
+model1 = lm(Total_Value_Real_estate_Transferred~Property_Type1+Total_acres+Feet_water_frontage+Number_of_units+`Energy Exclusion`+Arms_length+Primary_Class+Water_type+Property_Type1, data = onalaskaRE)
+summary(model1)
+```
+
 ```{r Plot by Month}
 ggplot(aes(x=Total_acres,y=Total_Value_Real_estate_Transferred, color=Month),data=onalaskaRE)+geom_point()
 
