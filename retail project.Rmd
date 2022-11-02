@@ -152,12 +152,20 @@ vif(model1)
 model2 = lm(log(Total_Value_Real_estate_Transferred)~Property_Type1+Total_acres+Number_of_units+`Energy Exclusion`+Feet_water_frontage+Primary_Class+Water_type+Property_Type2, data = onalaskaRE)
 summary(model2)
 anova(model2)
+
+par(mfrow=c(2,2))
+plot(model2)
+vif(model2)
 ```
 
 ```{r}
 model3 = lm(log(Total_Value_Real_estate_Transferred)~Property_Type1+Total_acres+Number_of_units+`Energy Exclusion`+Primary_Class+Property_Type2, data = onalaskaRE)
 summary(model3)
 anova(model3)
+
+par(mfrow=c(2,2))
+plot(model3)
+vif(model3)
 ```
 
 ```{r Plot by Month}
